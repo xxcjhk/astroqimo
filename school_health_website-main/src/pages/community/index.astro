@@ -1,0 +1,57 @@
+---
+import Container from "@components/container.astro";
+import Layout from "@layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+
+const features = [
+  {
+    title: "校园健康论坛",
+    description: "",
+    icon: "bx:bxs-home",
+    href: "/community/forum",
+  },
+  {
+    title: "线上打卡",
+    description: "",
+    icon: "bx:check-double",
+    href: "/community/keep",
+  },
+  {
+    title: "专家问答",
+    description: "",
+    icon: "bx:question-mark",
+    href: "/community/qa",
+  },
+];
+---
+
+<Layout title="">
+  <Container>
+    <div>
+      <h1
+        class="text-3xl lg:text-4xl xl:text-5xl font-bold lg:tracking-tight xl:tracking-tighter">
+        社区与互动
+      </h1>
+
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+        {
+          features.map((item) => (
+            <div class="flex gap-4 items-start">
+              <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
+                <Icon class="text-white" name={item.icon} />
+              </div>
+              <div>
+                <h3 class="font-semibold text-lg">
+                  <a href={item.href}>{item.title}</a>
+                </h3>{" "}
+                <p class="text-slate-500 mt-2 leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </Container>
+</Layout>

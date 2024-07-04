@@ -1,0 +1,66 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon/components";
+
+const features = [
+  {
+    title: "首页",
+    description: "",
+    icon: "bx:bxs-home",
+    href: "/",
+  },
+  {
+    title: "健康饮食",
+    description: "营养饮食，助力学业",
+    icon: "bx:bxs-bowl-hot",
+    href: "/blog/healthy-diet",
+  },
+  {
+    title: "宿舍健身",
+    description: "随时随地，保持活力",
+    icon: "bx:dumbbell",
+    href: "/blog/fitness",
+  },
+  {
+    title: "心理减压",
+    description: "心理平衡，快乐学习",
+    icon: "bx:happy-beaming",
+    href: "/blog/psycho-health",
+  },
+  {
+    title: "健康习惯与生活方式",
+    description: "培养健康习惯，享受美好生活",
+    icon: "bx:leaf",
+    href: "/blog/habit",
+  },
+  {
+    title: "社区与互动",
+    description: "一起分享，一起成长",
+    icon: "bx:body",
+    href: "/community",
+  },
+];
+---
+
+<div class="mt-16 md:mt-0">
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">内容丰富多彩</h2>
+  <p class="text-lg mt-4 text-slate-600">健康生活的各个方面</p>
+</div>
+
+<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+  {
+    features.map((item) => (
+      <div class="flex gap-4 items-start">
+        <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
+          <Icon class="text-white" name={item.icon} />
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg">
+            <a href={item.href}>{item.title}</a>
+          </h3>{" "}
+          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>

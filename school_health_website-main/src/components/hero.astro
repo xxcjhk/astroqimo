@@ -1,0 +1,39 @@
+---
+import { Picture } from "astro:assets";
+import heroImage from "assets/hero.jpg";
+import Link from "@components/ui/link.astro";
+---
+
+<main
+  class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
+  <div class="py-6 md:order-1 hidden md:block">
+    <Picture
+      src={heroImage}
+      alt="Astronaut in the air"
+      loading="eager"
+      format="avif"
+    />
+    <div class="w-full flex flex-row">
+      <a
+        class="mx-auto text-xs text-gray-500"
+        href="https://www.freepik.com/free-vector/fruit-salad-bowls-hand-drawn-design_7474818.htm#fromView=search&page=2&position=2&uuid=ac76fe69-822c-49c7-8450-d434cff568f5"
+        >Image by freepik</a
+      >
+    </div>
+  </div>
+  <div>
+    <h1
+      class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
+      校园健康攻略
+    </h1>
+    <p class="text-lg mt-4 text-slate-600 max-w-xl">健康饮食</p>
+    <div class="mt-6 flex flex-col sm:flex-row gap-3">
+      <Link
+        href="/blog"
+        class="flex gap-1 items-center justify-center"
+        rel="noopener">
+        开启校园健康之旅
+      </Link>
+    </div>
+  </div>
+</main>
